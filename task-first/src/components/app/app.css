@@ -1,0 +1,18 @@
+.display-1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: darkgreen;
+    margin-left: 10px;
+}
+
+.container {
+    width: 500px;
+    text-align: center;
+}
+.enter-edit{
+    position: absolute;
+    width: 90px;
+    top: 120px;
+    right: 430px;
+    z-index: 11111;
+}
