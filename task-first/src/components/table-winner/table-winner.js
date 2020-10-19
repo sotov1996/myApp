@@ -1,10 +1,6 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 
-export default class TableWinner extends Component{
-
-render() {
-    const {onCars, onRoad} = this.props;
-
+const TableWinner = ({onCars, onRoad}) => {
     const onCarWin = onCars.map((user, index) => {
         const time = Number(onRoad/user.speed).toFixed(1);
             return(
@@ -12,13 +8,16 @@ render() {
                     <td>{index+1}</td>
                     <td>{user.name}</td>
                     <td>{time}</td>
-                </tr>            
-            ) 
+                </tr> 
+            )           
+            
     })
-        return(
-            <>
-                {onCarWin}
-            </>
-            )
-        }
-    }
+    return(
+        <>
+           {onCarWin}
+        </>
+    )
+}
+    
+    
+export default TableWinner;

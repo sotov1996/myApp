@@ -45,9 +45,6 @@ export default class App extends Component {
         carsData: newArr
       }
     })
-    /*this.setState({
-      edit: !this.state.edit
-    })*/
   }
 
   addCar = (text, other) => {
@@ -74,9 +71,21 @@ export default class App extends Component {
     return (
       <div className="container">
           <CarForm onCarAdded={this.addCar}/>
-          <TableCars cars = {this.state.carsData}
+          <table className="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Speed, km/s</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <TableCars cars = {this.state.carsData}
                        onDeleted={this.deleteCar}
-                       onEdit={this.editCar}/>             
+                       onEdit={this.editCar}/>  
+                </tbody>
+            </table>            
           <RoadLenght onCars={this.state.carsData}/>
       </div>
       )
